@@ -774,11 +774,21 @@ textarea {
 
     color: #f4f1de;
 }
+.site-footer p {
+    margin: 5px 0;
+}
 .site-footer a {
     color: #f4f1de;
+    text-decoration: none;
+    font-weight: 700;
+
+    padding: 3px 6px;
+    border-radius: 6px;
 }
-.site-footer a:.site-footer a {
-    color: #ffffff;
+.site-footer a:hover {
+    color: #3d405b;
+    background-color: #f2cc8f;
+    text-decoration: underline;
 }
 
 
