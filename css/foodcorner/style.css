@@ -1,0 +1,866 @@
+/* =========================================================
+   FOOD CORNER
+   Lab 3 - Integrated CSS Website Development
+   ========================================================= */
+
+
+/* =========================================================
+   1. CSS VARIABLES
+   ========================================================= */
+
+:root {
+    --cream: #f4f1de;
+    --coral: #e07a5f;
+    --navy: #3d405b;
+    --sage: #81b29a;
+    --peach: #f2cc8f;
+
+    --container-width: 1150px;
+    --card-radius: 18px;
+}
+
+
+/* =========================================================
+   2. UNIVERSAL RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   3. ELEMENT SELECTOR
+   ========================================================= */
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #3d405b;
+    background-color: #f4f1de;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   4. GROUPING SELECTOR
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    color: #3d405b;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   5. CONTAINER
+   ========================================================= */
+
+.container {
+    width: 92%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   6. HEADER
+   ========================================================= */
+
+.site-header {
+    background-color: #f4f1de;
+    border-bottom: 1px solid rgba(61, 64, 91, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header-content {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+/* Class selector */
+.logo {
+    display: inline-block;
+    color: #3d405b;
+    text-decoration: none;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   7. NAVIGATION
+   ========================================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* Descendant selector */
+.main-nav a {
+    display: inline-block;
+    color: #3d405b;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    padding: 10px 16px;
+    border-radius: 10px;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Pseudo-class :hover */
+.main-nav a:hover {
+    background-color: #81b29a;
+    color: #f4f1de;
+    transform: translateY(-2px);
+}
+
+
+/* Attribute selector */
+a[href="#contact"] {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   8. HERO SECTION
+   ========================================================= */
+
+.hero-section {
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background-color: #f4f1de;
+
+    /*
+       Background properties required by the lab.
+       Replace the URL with your own food image if desired.
+    */
+    background-image: url("images/hero-food.jpg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 420px auto;
+}
+
+
+.hero-content {
+    width: 100%;
+    max-width: 760px;
+    min-width: 280px;
+
+    padding: 60px 30px;
+
+    background-color: rgba(244, 241, 222, 0.94);
+
+    border-radius: 24px;
+}
+
+
+.hero-section h1 {
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    font-weight: 800;
+    letter-spacing: -3px;
+
+    margin: 12px 0 20px;
+}
+
+
+/* Specificity example:
+   .hero-section p is more specific than p */
+.hero-section p {
+    color: #3d405b;
+}
+
+
+/* Same specificity / source order demonstration.
+   This rule comes later, therefore it wins. */
+.hero-section p {
+    line-height: 1.8;
+}
+
+
+.hero-text {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   9. BUTTONS
+   ========================================================= */
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border: 2px solid transparent;
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.primary-btn {
+    background-color: #e07a5f;
+    color: #f4f1de;
+}
+
+
+.primary-btn:hover {
+    background-color: #3d405b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(61, 64, 91, 0.18);
+}
+
+
+/* =========================================================
+   10. GENERAL SECTION STYLING
+   ========================================================= */
+
+.section {
+    padding: 90px 0;
+}
+
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+
+.section-label {
+    display: block;
+    color: #81b29a;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+
+.section-heading h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   11. PSEUDO-ELEMENTS
+   ========================================================= */
+
+/* ::before */
+.section-heading h2::before {
+    content: "•";
+    color: #e07a5f;
+    margin-right: 10px;
+}
+
+
+/* ::after */
+.section-heading h2::after {
+    content: "•";
+    color: #e07a5f;
+    margin-left: 10px;
+}
+
+
+/* =========================================================
+   12. ABOUT
+   ========================================================= */
+
+.about-section {
+    background-color: #81b29a;
+}
+
+
+.about-section .section-label {
+    color: #f4f1de;
+}
+
+
+.about-section h2 {
+    color: #f4f1de;
+}
+
+
+.about-box {
+    width: 90%;
+    max-width: 850px;
+
+    min-width: 280px;
+
+    min-height: 180px;
+    max-height: 300px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+    background-color: #f4f1de;
+
+    border: 2px solid #3d405b;
+    border-radius: 20px;
+
+    box-shadow: 0 12px 30px rgba(61, 64, 91, 0.14);
+
+    text-align: center;
+}
+
+
+.about-box p {
+    margin-bottom: 18px;
+}
+
+
+.about-box span {
+    color: #e07a5f;
+    font-weight: 700;
+}
+
+
+/* display:none requirement */
+.hidden-message {
+    display: none;
+}
+
+
+/* =========================================================
+   13. MENU
+   ========================================================= */
+
+.menu-section {
+    background-color: #f4f1de;
+}
+
+
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+}
+
+
+/* =========================================================
+   14. FOOD CARDS
+   ========================================================= */
+
+.food-card {
+    width: 260px;
+    height: 440px;
+
+    padding: 12px;
+
+    background-color: #f4f1de;
+
+    border: 2px solid rgba(61, 64, 91, 0.14);
+    border-radius: var(--card-radius);
+
+    margin: 0;
+
+    box-shadow: 0 10px 25px rgba(61, 64, 91, 0.10);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Hover effect */
+.food-card:hover {
+    transform: translateY(-7px);
+    border-color: #81b29a;
+    background-color: #e07a5f;
+    box-shadow: 0 18px 35px rgba(61, 64, 91, 0.16);
+}
+
+
+/* =========================================================
+   15. CARD IMAGES
+   ========================================================= */
+
+.food-card img {
+    width: 100%;
+    height: 190px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   16. CARD CONTENT
+   ========================================================= */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    padding: 18px 8px 8px;
+}
+
+
+.card-content h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+
+.description {
+    font-size: 0.83rem;
+    line-height: 1.6;
+
+    flex: 1;
+}
+
+
+.card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.price {
+    color: #e07a5f;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   17. ORDER BUTTON
+   ========================================================= */
+
+.order-btn {
+    background-color: #3d405b;
+    color: #f4f1de;
+
+    padding: 9px 13px;
+    border-radius: 9px;
+
+    font-size: 0.75rem;
+}
+
+
+/* Order button hover requirement */
+.order-btn:hover {
+    background-color: #e07a5f;
+    color: #f4f1de;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   18. CONTACT SECTION
+   ========================================================= */
+
+.contact-section {
+    background-color: #f2cc8f;
+}
+
+
+.contact-wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    gap: 40px;
+
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+
+.contact-text {
+    flex: 1;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.contact-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+
+.contact-text p {
+    max-width: 400px;
+}
+
+
+/* =========================================================
+   19. CONTACT FORM
+   ========================================================= */
+
+.contact-form {
+    flex: 1;
+
+    padding: 32px;
+
+    background-color: #f4f1de;
+
+    border: 2px solid #3d405b;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 25px rgba(61, 64, 91, 0.12);
+}
+
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+
+/* Attribute selector */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 2px solid rgba(61, 64, 91, 0.18);
+    border-radius: 10px;
+
+    background-color: #f4f1de;
+
+    color: #3d405b;
+
+    font-family: inherit;
+    font-size: 0.85rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Attribute selector + pseudo-class */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #81b29a;
+    box-shadow: 0 0 0 3px rgba(129, 178, 154, 0.18);
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+
+.submit-btn {
+    width: 100%;
+
+    border: none;
+
+    background-color: #e07a5f;
+    color: #f4f1de;
+}
+
+
+.submit-btn:hover {
+    background-color: #3d405b;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   20. CSS DEMONSTRATION AREA
+   ========================================================= */
+
+.css-demo-section {
+    padding: 70px 0;
+
+    background-color: #f4f1de;
+}
+
+
+.demo-box {
+    width: 100%;
+
+    min-width: 280px;
+    max-width: 800px;
+
+    min-height: 180px;
+    max-height: 300px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    border: 2px solid #81b29a;
+    border-radius: 18px;
+
+    background-color: #f4f1de;
+
+    box-shadow: 0 8px 20px rgba(61, 64, 91, 0.08);
+
+    text-align: center;
+}
+
+
+.demo-box h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   21. OVERFLOW DEMONSTRATION
+   ========================================================= */
+
+.overflow-box {
+    width: 100%;
+    height: 75px;
+
+    padding: 12px;
+
+    border: 2px solid #e07a5f;
+    border-radius: 10px;
+
+    text-align: left;
+    font-size: 0.78rem;
+
+    /*
+       Required overflow demonstration.
+       Change this to:
+       overflow: visible;
+       overflow: hidden;
+       overflow: scroll;
+       during the lab demonstration.
+    */
+    overflow: scroll;
+}
+
+
+/* =========================================================
+   22. MARGIN COLLAPSING DEMONSTRATION
+   ========================================================= */
+
+/*
+   These two block elements have vertical margins.
+
+   Their vertical margins can collapse because they are
+   normal vertically stacked block-level elements.
+*/
+
+.margin-demo-one {
+    display: block;
+    margin-bottom: 30px;
+}
+
+
+.margin-demo-two {
+    display: block;
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   23. DISPLAY PROPERTIES
+   ========================================================= */
+
+/* block */
+.section-label {
+    display: block;
+}
+
+
+/* inline */
+.about-box span {
+    display: inline;
+}
+
+
+/* inline-block */
+.main-nav a,
+.btn {
+    display: inline-block;
+}
+
+
+/* none */
+.hidden-message {
+    display: none;
+}
+
+
+/* =========================================================
+   24. FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 28px 20px;
+
+    background-color: #3d405b;
+
+    text-align: center;
+
+    color: #f4f1de;
+}
+.site-footer a {
+    color: #f4f1de;
+}
+.site-footer a:.site-footer a {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   25. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .header-content {
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 18px 0;
+    }
+
+
+    .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .hero-section {
+        background-image: none;
+    }
+
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+
+    .contact-text {
+        text-align: center;
+        align-items: center;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 65px 0;
+    }
+
+
+    .hero-section {
+        min-height: 500px;
+        padding: 50px 15px;
+    }
+
+
+    .hero-content {
+        padding: 45px 20px;
+    }
+
+
+    .hero-section h1 {
+        letter-spacing: -2px;
+    }
+
+
+    .menu-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .food-card {
+        width: min(100%, 320px);
+    }
+
+
+    .about-box {
+        padding: 25px;
+    }
+
+
+    .contact-form {
+        padding: 24px;
+    }
+
+}
