@@ -11,7 +11,7 @@ const marks3 = Number(prompt("Enter marks for Subject 3:"));
 const total = marks1 + marks2 + marks3;
 const average = total / 3;
 
-// Check pass or fail (assuming 50% is passing)
+// Check pass or fail (setting 50% as passing)
 let result;
 
 if (average >= 50) {
