@@ -52,3 +52,14 @@ const { name, programme } = student;
 
 console.log(name);      // Ayesha
 console.log(programme); // BSCS
+
+function introduce(prefix) {
+    return `${prefix} ${this.name} (${this.programme})`;
+}
+
+console.log(introduce.call(student, "Welcome"));
+
+console.log(introduce.apply(student, ["Hello"]));
+
+const introduceStudent = introduce.bind(student, "Student:");
+console.log(introduceStudent());
