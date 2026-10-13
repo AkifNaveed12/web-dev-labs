@@ -28,3 +28,27 @@ console.log(first.next());  // 2
 console.log(second.next()); // 11
 console.log(first.current());  // 2
 console.log(second.current()); // 11
+
+const marks = [78, 45, 90, 60];
+
+// Spread: expand the array into arguments
+console.log(total(...marks));
+console.log(average(...marks));
+
+// Array destructuring
+const [firstMark, secondMark, ...remainingMarks] = marks;
+
+console.log(firstMark);       // 78
+console.log(secondMark);      // 45
+console.log(remainingMarks);  // [90, 60]
+
+// Object destructuring
+const student = {
+    name: "Ayesha",
+    programme: "BSCS"
+};
+
+const { name, programme } = student;
+
+console.log(name);      // Ayesha
+console.log(programme); // BSCS
