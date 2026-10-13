@@ -1,16 +1,23 @@
-function total(...marks) {
-    return marks.reduce((sum, mark) => sum + mark, 0);
+
+"use strict";
+
+// 1. Reusable total and average functions
+function total(...values) {
+    return values.reduce((sum, value) => sum + value, 0);
 }
 
-function average(...marks) {
-    if (marks.length === 0) return 0;
+function average(...values) {
+    if (values.length === 0) return 0;
 
-    return total(...marks) / marks.length;
+    return total(...values) / values.length;
 }
 
-console.log(total(78, 45, 90, 60));   // 273
-console.log(average(78, 45, 90, 60)); // 68.25
+const marks = [78, 45, 90, 60];
 
+console.log("Total:", total(...marks));
+console.log("Average:", average(...marks).toFixed(2));
+
+// 2. Two independent counters using closures
 function createCounter(start = 0) {
     let count = start;
 
@@ -23,26 +30,20 @@ function createCounter(start = 0) {
 const first = createCounter();
 const second = createCounter(10);
 
-console.log(first.next());  // 1
-console.log(first.next());  // 2
-console.log(second.next()); // 11
-console.log(first.current());  // 2
-console.log(second.current()); // 11
+console.log("\nFirst counter:", first.next());   // 1
+console.log("First counter:", first.next());     // 2
+console.log("Second counter:", second.next());   // 11
+console.log("First current:", first.current());  // 2
+console.log("Second current:", second.current());// 11
 
-const marks = [78, 45, 90, 60];
-
-// Spread: expand the array into arguments
-console.log(total(...marks));
-console.log(average(...marks));
-
-// Array destructuring
+// 3. Array destructuring and rest
 const [firstMark, secondMark, ...remainingMarks] = marks;
 
-console.log(firstMark);       // 78
-console.log(secondMark);      // 45
-console.log(remainingMarks);  // [90, 60]
+console.log("\nFirst mark:", firstMark);
+console.log("Second mark:", secondMark);
+console.log("Remaining marks:", remainingMarks);
 
-// Object destructuring
+// 4. Object destructuring
 const student = {
     name: "Ayesha",
     programme: "BSCS"
@@ -50,15 +51,12 @@ const student = {
 
 const { name, programme } = student;
 
-console.log(name);      // Ayesha
-console.log(programme); // BSCS
-
+// 5. call(), apply(), and bind()
 function introduce(prefix) {
     return `${prefix} ${this.name} (${this.programme})`;
 }
 
-console.log(introduce.call(student, "Welcome"));
-
+console.log("\n" + introduce.call(student, "Welcome"));
 console.log(introduce.apply(student, ["Hello"]));
 
 const introduceStudent = introduce.bind(student, "Student:");
