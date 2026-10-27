@@ -10,10 +10,85 @@
 <body>
     <h1 id="heading">Hello!</h1>
     <button id="a">hello</button>
+    <h1 id="title">Old Title</h1>
+<p class="message">Welcome</p>
+<div id="output"></div>
+<div id="box"></div>
+
+<div class="class"></div>
+<div class="class"></div>
+<div class="class"></div>
+
+<button id="btn">Click Me</button>
+<p id="result"></p>
+
+
+<input id="search" placeholder="Search students">
+<p id="preview"></p>
+
+<form id="loginForm">
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button type="submit">Login</button>
+</form>
+
+<p id="message"></p>
 </body>
 <script defer>
         document.getElementById("a").addEventListener("click", function (){
             document.getElementById("heading").textContent = "Button clicked!"
         });
+
+
+const title = document.getElementById("title");
+const message = document.querySelector(".message");
+const output = document.querySelector("#output");
+
+title.textContent = "New Title";
+message.textContent = "Hello, Student!";
+output.textContent = "Page updated";
+
+
+
+const box = document.getElementById("box");
+
+box.style.backgroundColor = "blue";
+box.style.color = "white";
+box.innerText = "Hi Akif!";
+box.innerHTML = "<b>Hello</b>";
+
+// box.classList.add("active");
+// // box.classList.remove("active");
+// // box.classList.toggle("active");
+
+
+document.getElementById("btn")
+    .addEventListener("click", function () {
+        document.getElementById("result").textContent =
+            "Button clicked!";
+    });
+
+const search = document.getElementById("search");
+const preview = document.getElementById("preview");
+
+search.addEventListener("input", function () {
+    preview.textContent = search.value;
+});
+
+const form = document.getElementById("loginForm");
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+
+    if (username === "" || password === "") {
+        message.textContent = "Please fill in all fields.";
+    } else {
+        message.textContent = "Form submitted successfully!";
+    }
+});
     </script>
 </html>
