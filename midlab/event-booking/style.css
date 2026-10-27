@@ -11,7 +11,8 @@
     --teal: #3c6e71;
     --white: #ffffff;
     --grey: #d9d9d9;
-    --blue: #284b63;
+    --blue: #14213d;
+    --orange: #fb5607;
 }
 
 html {
@@ -51,6 +52,10 @@ a {
 header {
     background-color: var(--white);
     border-bottom: 1px solid var(--grey);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
@@ -124,7 +129,7 @@ header {
 /* Buttons */
 .btn {
     display: inline-block;
-    background-color: var(--teal);
+    background-color: var(--orange);
     color: var(--white);
     padding: 10px 18px;
     border: none;
@@ -140,7 +145,7 @@ header {
 }
 
 .hero .btn {
-    background-color: var(--teal);
+    background-color: var(--orange);
     margin-top: 8px;
 }
 
@@ -173,6 +178,7 @@ header {
     height: 190px;
     object-fit: cover;
     display: block;
+    /* object-position: top; */
     background-color: var(--grey);
 }
 
@@ -191,6 +197,9 @@ header {
 
 .event-info .btn {
     margin-top: 5px;
+    /* display: table;
+    width: fit-content;
+    margin: 15px auto 0; */
 }
 
 /* Booking Form */
@@ -233,6 +242,7 @@ form select:focus {
 
 form button {
     margin-top: 15px;
+    /* align-self: flex-start; */
 }
 
 #confirmation {
@@ -246,7 +256,7 @@ footer {
     background-color: var(--charcoal);
     color: var(--white);
     text-align: center;
-    padding: 22px;
+    padding: 40px;
 }
 
 footer p {
