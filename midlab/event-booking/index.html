@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eventora | Event Booking</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IT+Trad:wght@100..400&family=Roboto+Mono:wght@100..700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Eventora</h2>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#booking">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <p class="tagline">Discover. Experience. Enjoy.</p>
+
+            <h1>Find Your Next Experience</h1>
+
+            <p>
+                Explore exciting events and reserve your tickets
+                for unforgettable experiences.
+            </p>
+
+            <a href="#events" class="btn">Explore Events</a>
+        </section>
+
+        <!-- Available Events -->
+        <section class="events section" id="events">
+            <h2>Upcoming Events</h2>
+
+            <p class="section-text">
+                Explore our available events and choose your next experience.
+            </p>
+
+            <div class="event-container">
+
+                <article class="event-card">
+                    <img src="https://up.yimg.com/ib/th/id/OIP.hDsq-rzuf4O3qUFeAQqNnAHaEK?pid=Api&rs=1&c=1&qlt=95&w=172&h=96" alt="Technology conference">
+
+                    <div class="event-info">
+                        <h3>Tech Summit 2025</h3>
+                        <p>Explore the latest technology and AI innovations.</p>
+                        <p><strong>Date:</strong> 15 November 2026</p>
+                        <p><strong>Location:</strong> Islamabad</p>
+                        <a href="#booking" class="btn">Book Event</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <img src="data:image/jpeg;base64,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" alt="Music concert">
+
+                    <div class="event-info">
+                        <h3>Music Concert</h3>
+                        <p>Enjoy live performances and an amazing atmosphere.</p>
+                        <p><strong>Date:</strong> 20 November 2026</p>
+                        <p><strong>Location:</strong> Lahore</p>
+                        <a href="#booking" class="btn">Book Event</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <img src="data:image/jpeg;base64,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" alt="Creative workshop">
+
+                    <div class="event-info">
+                        <h3>Creative Workshop</h3>
+                        <p>Learn new skills and connect with creative minds.</p>
+                        <p><strong>Date:</strong> 25 November 2026</p>
+                        <p><strong>Location:</strong> Wah Cantt</p>
+                        <a href="#booking" class="btn">Book Event</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Registration Form -->
+        <section class="booking section" id="booking">
+            <h2>Book Your Tickets</h2>
+
+            <p class="section-text">
+                Fill in the details below to submit your booking request.
+            </p>
+
+            <form id="booking-form">
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
+
+                <label for="event">Select Event</label>
+                <select id="event" name="event" required>
+                    <option value="">Choose an event</option>
+                    <option value="Tech Summit 2026">Tech Summit 2026</option>
+                    <option value="Music Concert">Music Concert</option>
+                    <option value="Creative Workshop">Creative Workshop</option>
+                </select>
+
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="tickets">Number of Tickets</label>
+                <input type="number" id="tickets" name="tickets"
+                       min="1" max="10" value="1" required>
+
+                <button type="submit" class="btn">Submit Booking</button>
+
+                <p id="confirmation" role="status" aria-live="polite"></p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Eventora. All rights reserved.</p>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
